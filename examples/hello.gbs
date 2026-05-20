@@ -1,0 +1,19 @@
+# Hello World на GBS
+
+print "================================"
+print "   Welcome to GBS Language!    "
+print "================================"
+print ""
+
+print "What is your name? "
+io.read()
+set name = %GBS_INPUT%
+
+print ""
+print "Hello, "
+print name
+print "!"
+
+print ""
+print "Today is a great day for coding!"
+print "================================"
