@@ -1,7 +1,0 @@
-print Hello from GBS!
-print =================
-print This is a test
-print Enter your name:
-io.read()
-print Nice to meet you!
-print The end
