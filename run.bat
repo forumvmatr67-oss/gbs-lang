@@ -1,16 +1,19 @@
 @echo off
-chcp 65001 >nul
 title GBS Runner
 
 if "%1"=="" (
-    echo Usage: run.bat script.gbs
+    echo Usage: run script.gbs
     echo.
     echo Available scripts:
+    echo.
     dir *.gbs /b 2>nul
     if exist "examples\*.gbs" (
-        echo.
         echo Examples:
         dir examples\*.gbs /b
+    )
+    if exist "scripts\*.gbs" (
+        echo Scripts:
+        dir scripts\*.gbs /b
     )
     pause
     exit /b 1
@@ -22,9 +25,5 @@ if not exist "%1" (
     exit /b 1
 )
 
-echo.
-echo Running %1...
-echo ====================================
-python gbs.py "%1"
-echo ====================================
+call gbs.bat "%1"
 pause
