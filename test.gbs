@@ -1,34 +1,7 @@
-# Test Script for GBS Language
-print "=================="
-print "GBS Language Test"
-print "=================="
-
-set name = "Gosha"
-print "Hello, "
-print name
-
-set x = 5
-set y = 3
-set result = x + y
-print "5 + 3 = "
-print result
-
-print "Enter your age:"
+print Hello from GBS!
+print =================
+print This is a test
+print Enter your name:
 io.read()
-print "Your age is: "
-print last_input
-
-set score = 85
-if score > 90
-    print "Excellent!"
-endif
-if score > 70
-    print "Good job!"
-endif
-
-print "Counting:"
-for i = 1 to 3
-    print i
-end
-
-print "Test complete!"
+print Nice to meet you!
+print The end
