@@ -1,0 +1,46 @@
+# Калькулятор на GBS
+
+print "===== GBS CALCULATOR ====="
+print ""
+
+print "Enter first number: "
+io.read()
+set a = %GBS_INPUT%
+
+print "Enter operator (+, -, *, /): "
+io.read()
+set op = %GBS_INPUT%
+
+print "Enter second number: "
+io.read()
+set b = %GBS_INPUT%
+
+print ""
+print "Result: "
+
+if op == "+"
+    set result = a + b
+    print result
+end
+
+if op == "-"
+    set result = a - b
+    print result
+end
+
+if op == "*"
+    set result = a * b
+    print result
+end
+
+if op == "/"
+    if b != 0
+        set result = a / b
+        print result
+    else
+        print "Error: Division by zero!"
+    end
+end
+
+print ""
+print "========================"
