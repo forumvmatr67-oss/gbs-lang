@@ -1,7 +1,6 @@
 @echo off
-chcp 65001 >nul
-color 0A
 title GBS Installer
+color 0A
 
 echo ====================================
 echo      GBS Language Installer
@@ -13,25 +12,43 @@ if not exist "src" mkdir src
 if not exist "examples" mkdir examples
 if not exist "scripts" mkdir scripts
 
-:: Создание интерпретатора
-echo Creating interpreter...
+:: Копирование интерпретатора
+copy nul gbs.bat >nul
 
-:: Создаем gbs.bat
-echo @echo off > gbs.bat
-echo chcp 65001 ^>nul >> gbs.bat
-echo python gbs.py %%1 >> gbs.bat
+:: Создание тестового скрипта в examples
+(
+echo # Example GBS Script
+echo print "Hello from GBS!"
+echo print "================="
+echo set name = "GBS User"
+echo print "Welcome, "
+echo print name
+echo.
+echo print "Enter your name:"
+echo io.read()
+echo print "Hello, "
+echo print last_input
+) > examples\test.gbs
 
-:: Создаем run.bat
-echo @echo off > run.bat
-echo chcp 65001 ^>nul >> run.bat
-echo python gbs.py %%1 >> run.bat
-echo pause >> run.bat
-
-:: Создаем тестовый скрипт
-echo print "Hello from GBS!" > examples\test.gbs
-echo set name = "GBS User" >> examples\test.gbs
-echo print "Welcome, " >> examples\test.gbs
-echo print name >> examples\test.gbs
+:: Создание демо скрипта
+(
+echo # Demo Script
+echo print "=== GBS Demo ==="
+echo set x = 10
+echo set y = 20
+echo set sum = x + y
+echo print "Sum: "
+echo print sum
+echo.
+echo if x ^< y
+echo     print "x is less than y"
+echo endif
+echo.
+echo for i = 1 to 3
+echo     print "Count: "
+echo     print i
+echo end
+) > scripts\demo.gbs
 
 echo.
 echo ====================================
@@ -39,10 +56,11 @@ echo GBS successfully installed!
 echo ====================================
 echo.
 echo Commands:
-echo   gbs.bat script.gbs  - run script
-echo   python gbs.py --find - find all .gbs files
-echo   python gbs.py --create NAME - create new script
+echo   gbs script.gbs     - run script
+echo   find               - find all .gbs files
+echo   new name           - create new script
+echo   run script.gbs     - run with pause
 echo.
-echo Examples in 'examples\' folder
+echo Examples in 'examples\' and 'scripts\'
 echo.
 pause
