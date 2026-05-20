@@ -1,0 +1,35 @@
+# Игра "Угадай число"
+
+print "🎮 GUESS THE NUMBER GAME 🎮"
+print ""
+print "Guess the number from 1 to 10!"
+
+set secret = 7
+set attempts = 0
+
+while attempts < 3
+    print ""
+    print "Your guess: "
+    io.read()
+    set guess = %GBS_INPUT%
+    set attempts = attempts + 1
+    
+    if guess == secret
+        print ""
+        print "🎉 CORRECT! You won! 🎉"
+        print "Attempts: "
+        print attempts
+        break
+    else
+        print "❌ Wrong! Try again!"
+    end
+end
+
+if attempts == 3
+    print ""
+    print "💀 Game Over! The number was "
+    print secret
+end
+
+print ""
+print "Thanks for playing!"
