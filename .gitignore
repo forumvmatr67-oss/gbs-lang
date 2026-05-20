@@ -1,0 +1,19 @@
+# Temporary files
+*.tmp
+*.bak
+*.log
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# User
+*.user
+*.local
+
+# Test results
+tests/results.txt
