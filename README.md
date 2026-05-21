@@ -1,7 +1,7 @@
 <div align="center">
 
 # 🧠 GBS (Genius Brain Script)
-
+НЕ РАБОАТАЕТ
 ### Простой и гениальный язык программирования
 
 ![Version](https://img.shields.io/badge/version-1.0-blue)
